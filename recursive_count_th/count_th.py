@@ -7,10 +7,15 @@ def count_th(word):
     
     # TBC
     total = 0
+    if len(word) < 2:
+        return total
+    
     if word[0] == 't':
         if word[1] == 'h':
             total += 1
             return total + count_th(word[2:])
+        else:
+            return total + count_th(word[1:])
     else:
         return total + count_th(word[1:])
 
